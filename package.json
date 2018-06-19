@@ -1,0 +1,20 @@
+{
+  "name": "sample-bot",
+  "version": "1.0.0",
+  "description": "A sample Discord bot made using lazybot.",
+  "main": "index.js",
+  "author": "Alyanah <40045317+alyanah@users.noreply.github.com>",
+  "homepage": "https://github.com/alyanah/sample-bot",
+  "bugs": {
+    "url": "https://github.com/alyanah/sample-bot/issues"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alyanah/sample-bot.git"
+  },
+  "dependencies": {
+    "dateformat": "^3.0.3",
+    "lazybot": "github:alyanah/lazybot"
+  }
+}
