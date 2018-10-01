@@ -1,10 +1,12 @@
+const lazybot = require('lazybot');
 const dateformat = require('dateformat');
 
-module.exports = {
+module.exports = new lazybot.Command({
     // The name of the command as it would be typed in Discord.
     "name": "userinfo",
-    // The callback function called when this command is executed.
-    "callback": ({message, args}) => {
+    // The command handler run when this command is executed.
+    "handler": new lazybot.CommandHandler((params) => {
+        let {message, args} = params;
         let {member} = message;
 
         // By default use the member who executed this command.
@@ -16,7 +18,7 @@ module.exports = {
 
         // If this command isn't used in a channel, or the member can't be found, ignore.
         if (!member) {
-            return;
+            return Promise.resolve();
         }
 
         let name = member.nickname || member.user.username;
@@ -37,5 +39,7 @@ module.exports = {
                     `**Roles**: ${roles.join(", ")}`
             }
         });
-    }
-};
+
+        return Promise.resolve();
+    })
+});

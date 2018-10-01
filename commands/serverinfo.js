@@ -1,15 +1,17 @@
+const lazybot = require('lazybot');
 const dateformat = require('dateformat');
 
-module.exports = {
+module.exports = new lazybot.Command({
     // The name of the command as it would be typed in Discord.
     "name": "serverinfo",
-    // The callback function called when this command is executed.
-    "callback": ({message}) => {
+    // The command handler run when this command is executed.
+    "handler": new lazybot.CommandHandler((params) => {
+        let {message} = params;
         let {guild} = message;
 
         // If this command isn't used in a channel, ignore.
         if (!guild) {
-            return;
+            return Promise.resolve();
         }
 
         // Send an embed to the channel with the server details.
@@ -26,5 +28,7 @@ module.exports = {
                     `**Members**: ${guild.memberCount}`
             }
         });
-    }
-};
+
+        return Promise.resolve();
+    })
+});
