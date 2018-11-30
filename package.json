@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A sample Discord bot made using lazybot.",
   "main": "index.js",
-  "author": "Alyanah <40045317+alyanah@users.noreply.github.com>",
+  "author": "Alyanah <aly@alyanah.moe>",
   "homepage": "https://github.com/alyanah/sample-bot",
   "bugs": {
     "url": "https://github.com/alyanah/sample-bot/issues"
